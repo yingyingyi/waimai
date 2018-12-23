@@ -7,7 +7,7 @@ import ajax from './ajax'
 // 开发环境下需要使用代理帮我们转发请求
 const BASE = '/api'
 
-// 1、根据经纬度获取位置
+// 根据经纬度获取位置
 
 export const reqAddress = (longitude, latitude) => ajax(BASE + `/position/${latitude},${longitude}`)
 

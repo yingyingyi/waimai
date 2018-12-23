@@ -56,6 +56,7 @@
 </template>
 
 <script>
+  //从vuex中获取状态数据
   import {mapState} from 'vuex'
   export default {
     data () {
@@ -63,6 +64,7 @@
         baseImgUrl: 'https://fuss10.elemecdn.com'
       }
     },
+    //计算属性
     computed: {
       ...mapState(['shops'])
     }
