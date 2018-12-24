@@ -81,10 +81,9 @@
     methods: {
       // 发送短信验证码
       async sendCode () {
-        // alert('---')
         // 显示最大的计时时间
         this.computeTime = 30
-        // 启动循环计时器, 每隔1s减1
+
         const intervalId = setInterval(() => {
           this.computeTime--
           if(this.computeTime<=0) {
@@ -109,7 +108,6 @@
 
       // 更新显示图形验证码
       updateCaptcha () {
-        // 给img指定src, 携带时间戳参数 ==> 浏览器会自动再发请求获取新的验证码图片
         this.$refs.captcha.src = 'http://localhost:5000/captcha?time='+Date.now()
       },
 

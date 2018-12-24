@@ -15,7 +15,6 @@
     },
 
     computed: {
-      // 3.5: 3 + 1 + 1
       starClasses () {
         const {score} = this
         const scs = []
@@ -40,7 +39,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
-  
+
   .star //2x图 3x图
     float left
     font-size 0

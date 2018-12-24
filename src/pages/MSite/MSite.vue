@@ -27,7 +27,7 @@
       </div>
 
       <img src="./images/msite_back.svg" alt="back" v-else>
-      
+
     </nav>
     <!--首页附近商家-->
     <div class="msite_shop_list">
@@ -46,12 +46,6 @@
   import {mapState} from 'vuex'
   import ShopList from '../../components/ShopList/ShopList.vue'
 
-/*
-解决swiper在vue中不能轮播的bug
-  watch: 监视状态数据更新了
-  $nextTick(() => {}): 界面更新了, 在回调函数中创建swiper对象
-
- */
 
   export default {
 
@@ -70,18 +64,7 @@
           })
         })
       })
-    /*  // 不太好
-      setTimeout(() => {
-        // 创建swiper对象的时机: 列表数据显示之后
-        new Swiper('.swiper-container', { // 配置对象
-          loop: true, // 循环轮播
-          // 如果需要分页器
-          pagination: {
-            el: '.swiper-pagination',
-          },
-        })
-      }, 3000)
-      */
+
     },
 
     computed: {
@@ -116,20 +99,7 @@
     },
 
     watch: {
-      // 注意: vue在更新状态数据后 ==> 先调用监视的回调 ==> 异步更新界面
-      /*categorys () { // categorys重新赋值了, 有数据了(状态数据更新了)
-        // 将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新
-        this.$nextTick(() => {
-          // 创建swiper对象的时机: 列表数据显示之后
-          new Swiper('.swiper-container', { // 配置对象
-            loop: true, // 循环轮播
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-          })
-        })
-      }*/
+
     },
 
     components: {
