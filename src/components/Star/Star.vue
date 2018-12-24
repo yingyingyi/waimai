@@ -1,6 +1,6 @@
 <template>
   <div class="star" :class="`star-${size}`">
-    <span class="star-item" v-for="(star, index) in starClasses" :key="index" :class="star"></span>
+    <span class="star-item" v-for="(c, index) in starClasses" :key="index" :class="c"></span>
   </div>
 </template>
 
@@ -10,11 +10,12 @@
   const CLASS_OFF = 'off'
   export default {
     props: {
-      score: Number,
-      size: Number,
+      score: Number, // 0-5
+      size: Number, // 24/36/48
     },
-    //计算属性
+
     computed: {
+      // 3.5: 3 + 1 + 1
       starClasses () {
         const {score} = this
         const scs = []
@@ -39,7 +40,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
-
+  
   .star //2x图 3x图
     float left
     font-size 0

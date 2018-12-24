@@ -1,7 +1,7 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list" v-if="shops.length>0">
-      <li class="shop_li border-1px" v-for="(shop, index) in shops" :key="index">
+      <li class="shop_li border-1px" v-for="(shop, index) in shops" :key="index" @click="$router.push('/shop')">
         <a>
           <div class="shop_left">
             <img class="shop_img" :src="baseImgUrl+shop.image_path">
@@ -56,7 +56,6 @@
 </template>
 
 <script>
-  //从vuex中获取状态数据
   import {mapState} from 'vuex'
   export default {
     data () {
@@ -64,7 +63,6 @@
         baseImgUrl: 'https://fuss10.elemecdn.com'
       }
     },
-    //计算属性
     computed: {
       ...mapState(['shops'])
     }
